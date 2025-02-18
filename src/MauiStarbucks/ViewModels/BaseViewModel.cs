@@ -1,4 +1,4 @@
-﻿namespace MauiStarbucks.ViewModels
+﻿namespace CassavaRoots.ViewModels
 {
     public abstract class BaseViewModel: IViewModel
     {

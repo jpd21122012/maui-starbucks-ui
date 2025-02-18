@@ -1,8 +1,8 @@
 ﻿global using CommunityToolkit.Mvvm.ComponentModel;
-global using MauiStarbucks.Models;
-global using MauiStarbucks.ViewModels;
-global using MauiStarbucks.Views.Pages;
-global using MauiStarbucks.Services;
+global using CassavaRoots.Models;
+global using CassavaRoots.ViewModels;
+global using CassavaRoots.Views.Pages;
+global using CassavaRoots.Services;
 global using Splat;
 global using CommunityToolkit.Mvvm.Input;
 global using CommunityToolkit.Maui;
@@ -10,6 +10,6 @@ global using Microsoft.Maui.Platform;
 global using System.Collections.ObjectModel;
 global using System.Diagnostics;
 global using System.Windows.Input;
-global using MauiStarbucks.Views.ControlViews;
+global using CassavaRoots.Views.ControlViews;
 
 

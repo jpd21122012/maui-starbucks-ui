@@ -1,6 +1,6 @@
-﻿using MauiStarbucks.Models;
+﻿using CassavaRoots.Models;
 
-namespace MauiStarbucks.ViewModels
+namespace CassavaRoots.ViewModels
 {
     [INotifyPropertyChanged]
     public partial class HomeViewModel : BaseViewModel

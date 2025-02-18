@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace MauiStarbucks;
+namespace CassavaRoots;
 
 [Application]
 public class MainApplication : MauiApplication

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MauiStarbucks.ViewModels
+namespace CassavaRoots.ViewModels
 {
     [INotifyPropertyChanged]
     public partial class NotificationViewModel : BaseViewModel

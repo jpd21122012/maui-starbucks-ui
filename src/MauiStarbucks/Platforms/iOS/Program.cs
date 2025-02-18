@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace MauiStarbucks;
+namespace CassavaRoots;
 
 public class Program
 {

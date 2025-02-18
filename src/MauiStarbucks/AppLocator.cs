@@ -1,4 +1,4 @@
-﻿namespace MauiStarbucks
+﻿namespace CassavaRoots
 {
     public static class AppLocator
     {

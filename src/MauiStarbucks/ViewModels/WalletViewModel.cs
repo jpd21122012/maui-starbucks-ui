@@ -1,4 +1,4 @@
-﻿namespace MauiStarbucks.ViewModels
+﻿namespace CassavaRoots.ViewModels
 {
     [INotifyPropertyChanged]
     public partial class WalletViewModel: BaseViewModel

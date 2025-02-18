@@ -1,4 +1,4 @@
-namespace MauiStarbucks.Views.Pages;
+namespace CassavaRoots.Views.Pages;
 
 public partial class DetailPage : ContentPage
 {

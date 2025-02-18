@@ -1,4 +1,4 @@
-﻿namespace MauiStarbucks.Models
+﻿namespace CassavaRoots.Models
 {
     [INotifyPropertyChanged]
     public partial class Product

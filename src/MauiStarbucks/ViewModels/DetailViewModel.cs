@@ -1,4 +1,4 @@
-﻿namespace MauiStarbucks.ViewModels
+﻿namespace CassavaRoots.ViewModels
 {
     [INotifyPropertyChanged]
     [QueryProperty(nameof(SelectedProduct), nameof(SelectedProduct))]

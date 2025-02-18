@@ -1,4 +1,4 @@
-﻿namespace MauiStarbucks.Services
+﻿namespace CassavaRoots.Services
 {
     public class ProductService
     {

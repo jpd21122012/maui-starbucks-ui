@@ -1,4 +1,4 @@
-﻿namespace MauiStarbucks;
+﻿namespace CassavaRoots;
 
 public partial class App : Application
 {

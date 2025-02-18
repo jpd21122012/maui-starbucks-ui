@@ -1,6 +1,6 @@
 using System.Windows.Input;
 
-namespace MauiStarbucks.Views.Pages;
+namespace CassavaRoots.Views.Pages;
 
 public partial class CustomTabBar : BasePage
 {

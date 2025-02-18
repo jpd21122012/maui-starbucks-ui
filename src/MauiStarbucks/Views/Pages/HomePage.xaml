@@ -1,22 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<page:CustomTabBar xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-                   xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                   mc:Ignorable="d"
-                   xmlns:page="clr-namespace:MauiStarbucks.Views.Pages"
-                   xmlns:local="clr-namespace:MauiStarbucks"
-                   x:Class="MauiStarbucks.Views.Pages.HomePage"
-                   xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls"
-                   android:Application.WindowSoftInputModeAdjust="Unspecified"
-                   BindingContext="{x:Static local:AppLocator.HomeViewModel}"
-                   x:Name="HomeView"
-                   SelectedTabIndex="0"
-                   Shell.PresentationMode="Animated"
-                   Background="{StaticResource TertiaryBrush}">
+<page:CustomTabBar
+    x:Class="CassavaRoots.Views.Pages.HomePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:android="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.AndroidSpecific;assembly=Microsoft.Maui.Controls"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:local="clr-namespace:CassavaRoots"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:page="clr-namespace:CassavaRoots.Views.Pages"
+    x:Name="HomeView"
+    android:Application.WindowSoftInputModeAdjust="Unspecified"
+    Background="{StaticResource TertiaryBrush}"
+    BindingContext="{x:Static local:AppLocator.HomeViewModel}"
+    SelectedTabIndex="0"
+    Shell.PresentationMode="Animated"
+    mc:Ignorable="d">
     <page:CustomTabBar.ViewContent>
-        <Grid HorizontalOptions="FillAndExpand"
-              VerticalOptions="FillAndExpand">
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <Grid.Margin>
                 <OnPlatform x:TypeArguments="Thickness">
                     <On Platform="iOS,MacCatalyst" Value="15,-35,15,0" />
@@ -27,122 +27,113 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <!---Title/Header-->
-            <Grid Grid.Row="0"
-                  ColumnDefinitions="*,*,*">
-                <Border Grid.Column="0"
-                        HorizontalOptions="Start"
-                        Style="{StaticResource EllipseBorderStyle}">
-                    <Image Source="humberger_menu.png"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center"/>
+            <!--  -Title/Header  -->
+            <Grid Grid.Row="0" ColumnDefinitions="*,*,*">
+                <Border
+                    Grid.Column="0"
+                    HorizontalOptions="Start"
+                    Style="{StaticResource EllipseBorderStyle}">
+                    <Image
+                        HorizontalOptions="Center"
+                        Source="humberger_menu.png"
+                        VerticalOptions="Center" />
                 </Border>
-                <Image Grid.Column="1"
-                       Style="{StaticResource ImgBrandStyle}"/>
-                <Border Grid.Column="2"
-                        HorizontalOptions="End"
-                        Style="{StaticResource EllipseBorderStyle}"
-                        Padding="12">
-                    <Image Source="shop_bag.png"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center"/>
+                <Image Grid.Column="1" Style="{StaticResource ImgBrandStyle}" />
+                <Border
+                    Grid.Column="2"
+                    Padding="12"
+                    HorizontalOptions="End"
+                    Style="{StaticResource EllipseBorderStyle}">
+                    <Image
+                        HorizontalOptions="Center"
+                        Source="shop_bag.png"
+                        VerticalOptions="Center" />
                 </Border>
             </Grid>
-            <ScrollView Grid.Row="1"
-                        Orientation="Vertical"
-                        VerticalOptions="Fill"
-                        BackgroundColor="Transparent"
-                        VerticalScrollBarVisibility="Never"
-                        HorizontalScrollBarVisibility="Never">
-                <Grid RowDefinitions="Auto,Auto"
-                      VerticalOptions="FillAndExpand"
-                      Padding="0,0,0,0">
-                    <!---Slogan and Search & Filter Section-->
-                    <VerticalStackLayout Grid.Row="0"
-                                         Margin="0,20,0,0">
-                        <Label Text="Our way of loving"
-                               Style="{StaticResource LargeMessageLabelStyle}">
-                        </Label>
-                        <Label Text="you back"
-                               Style="{StaticResource LargeMessageLabelStyle}"/>
+            <ScrollView
+                Grid.Row="1"
+                BackgroundColor="Transparent"
+                HorizontalScrollBarVisibility="Never"
+                Orientation="Vertical"
+                VerticalOptions="Fill"
+                VerticalScrollBarVisibility="Never">
+                <Grid
+                    Padding="0,0,0,0"
+                    RowDefinitions="Auto,Auto"
+                    VerticalOptions="FillAndExpand">
+                    <!--  -Slogan and Search & Filter Section  -->
+                    <VerticalStackLayout Grid.Row="0" Margin="0,20,0,0">
+                        <Label Style="{StaticResource LargeMessageLabelStyle}" Text="Our way of loving" />
+                        <Label Style="{StaticResource LargeMessageLabelStyle}" Text="you back" />
                         <Grid>
                             <Border Style="{StaticResource SearchBorderStyle}">
-                                <Grid ColumnDefinitions="Auto,*"
-                                      ColumnSpacing="20">
-                                    <Image Grid.Column="0" 
-                                           Source="search.png"/>
-                                    <Entry Grid.Column="1" 
-                                           Style="{StaticResource SearchEntryStyle}"/>
+                                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="20">
+                                    <Image Grid.Column="0" Source="search.png" />
+                                    <Entry Grid.Column="1" Style="{StaticResource SearchEntryStyle}" />
                                 </Grid>
                             </Border>
                             <Border Style="{StaticResource FilterBorderStyle}">
-                                <Image Source="filter.png"/>
+                                <Image Source="filter.png" />
                             </Border>
                         </Grid>
                     </VerticalStackLayout>
-                    <!---Products Section-->
-                    <StackLayout Grid.Row="1"
-                                 Margin="0,20,0,0">
-                        <!---Category Chips-->
-                        <ScrollView Orientation="Horizontal"
-                                    VerticalOptions="Start"
-                                    VerticalScrollBarVisibility="Never"
-                                    HorizontalScrollBarVisibility="Never"
-                                    BackgroundColor="Transparent">
-                            <HorizontalStackLayout Spacing="10"
-                                       RadioButtonGroup.GroupName="CoffeCategories"
-                                       RadioButtonGroup.SelectedValue="{Binding CategorySelectedValue}"
-                                       BindableLayout.ItemsSource="{StaticResource CategoriesArray}">
+                    <!--  -Products Section  -->
+                    <StackLayout Grid.Row="1" Margin="0,20,0,0">
+                        <!--  -Category Chips  -->
+                        <ScrollView
+                            BackgroundColor="Transparent"
+                            HorizontalScrollBarVisibility="Never"
+                            Orientation="Horizontal"
+                            VerticalOptions="Start"
+                            VerticalScrollBarVisibility="Never">
+                            <HorizontalStackLayout
+                                BindableLayout.ItemsSource="{StaticResource CategoriesArray}"
+                                RadioButtonGroup.GroupName="CoffeCategories"
+                                RadioButtonGroup.SelectedValue="{Binding CategorySelectedValue}"
+                                Spacing="10">
                                 <BindableLayout.ItemTemplate>
                                     <DataTemplate>
-                                        <RadioButton x:Name="RadioCategory" Content="{Binding .}" Value="{Binding .}">
+                                        <RadioButton
+                                            x:Name="RadioCategory"
+                                            Content="{Binding .}"
+                                            Value="{Binding .}">
                                             <RadioButton.ControlTemplate>
                                                 <ControlTemplate>
                                                     <Grid HorizontalOptions="FillAndExpand">
+                                                        <Border
+                                                            x:Name="ChipBorderView"
+                                                            HeightRequest="35"
+                                                            StrokeThickness="0"
+                                                            WidthRequest="90">
+                                                            <Border.StrokeShape>
+                                                                <RoundRectangle CornerRadius="25" />
+                                                            </Border.StrokeShape>
+                                                            <Label
+                                                                x:Name="CategoryLabel"
+                                                                FontFamily="RalewayRegular"
+                                                                FontSize="16"
+                                                                HorizontalTextAlignment="Center"
+                                                                Text="{TemplateBinding Content}"
+                                                                VerticalTextAlignment="Center" />
+                                                        </Border>
                                                         <VisualStateManager.VisualStateGroups>
                                                             <VisualStateGroupList>
                                                                 <VisualStateGroup x:Name="CheckedStates">
                                                                     <VisualState x:Name="Checked">
                                                                         <VisualState.Setters>
-                                                                            <Setter
-                                                                    TargetName="CategoryLabel"
-                                                                    Property="Label.TextColor"
-                                                                    Value="{StaticResource White}"/>
-                                                                            <Setter
-                                                                    TargetName="ChipBorderView"
-                                                                    Property="Border.Background"
-                                                                    Value="{StaticResource PrimaryBrush}"/>
+                                                                            <Setter TargetName="CategoryLabel" Property="Label.TextColor" Value="{StaticResource White}" />
+                                                                            <Setter TargetName="ChipBorderView" Property="Border.Background" Value="{StaticResource PrimaryBrush}" />
                                                                         </VisualState.Setters>
                                                                     </VisualState>
                                                                     <VisualState x:Name="Unchecked">
                                                                         <VisualState.Setters>
-                                                                            <Setter
-                                                                    TargetName="CategoryLabel"
-                                                                    Property="Label.TextColor"
-                                                                    Value="{StaticResource Gray400}"/>
-                                                                            <Setter
-                                                                    TargetName="ChipBorderView"
-                                                                    Property="Border.Background"
-                                                                    Value="{StaticResource Gray100Brush}"/>
+                                                                            <Setter TargetName="CategoryLabel" Property="Label.TextColor" Value="{StaticResource Gray400}" />
+                                                                            <Setter TargetName="ChipBorderView" Property="Border.Background" Value="{StaticResource Gray100Brush}" />
                                                                         </VisualState.Setters>
                                                                     </VisualState>
                                                                 </VisualStateGroup>
                                                             </VisualStateGroupList>
                                                         </VisualStateManager.VisualStateGroups>
-                                                        <Border StrokeThickness="0"
-                                                        x:Name="ChipBorderView"
-                                                        HeightRequest="35"
-                                                        WidthRequest="90">
-                                                            <Border.StrokeShape>
-                                                                <RoundRectangle CornerRadius="25"/>
-                                                            </Border.StrokeShape>
-                                                            <Label Text="{TemplateBinding Content}" 
-                                                           x:Name="CategoryLabel"
-                                                           HorizontalTextAlignment="Center"
-                                                           VerticalTextAlignment="Center"
-                                                           FontFamily="RalewayRegular"
-                                                           FontSize="16"/>
-                                                        </Border>
                                                     </Grid>
                                                 </ControlTemplate>
                                             </RadioButton.ControlTemplate>
@@ -151,97 +142,115 @@
                                 </BindableLayout.ItemTemplate>
                             </HorizontalStackLayout>
                         </ScrollView>
-                        <!---Product List Header-->
-                        <StackLayout Orientation="Horizontal" 
-                                     HorizontalOptions="FillAndExpand"
-                                     VerticalOptions="Start"
-                                     Margin="0,20,0,0">
-                            <Label Text="Popular"
-                                   HorizontalOptions="StartAndExpand"
-                                   FontFamily="RalewayMedium"
-                                   FontSize="22"
-                                   TextColor="Black"/>
-                            <Label Text="See All"
-                                   HorizontalOptions="End"
-                                   FontFamily="RalewayMedium"
-                                   FontSize="22"
-                                   TextColor="{StaticResource Primary}"/>
+                        <!--  -Product List Header  -->
+                        <StackLayout
+                            Margin="0,20,0,0"
+                            HorizontalOptions="FillAndExpand"
+                            Orientation="Horizontal"
+                            VerticalOptions="Start">
+                            <Label
+                                FontFamily="RalewayMedium"
+                                FontSize="22"
+                                HorizontalOptions="StartAndExpand"
+                                Text="Popular"
+                                TextColor="Black" />
+                            <Label
+                                FontFamily="RalewayMedium"
+                                FontSize="22"
+                                HorizontalOptions="End"
+                                Text="See All"
+                                TextColor="{StaticResource Primary}" />
                         </StackLayout>
-                        <!---Products Collection View-->
-                        <CollectionView ItemsSource="{Binding Products}"
-                                        SelectionMode="None"
-                                        VerticalOptions="StartAndExpand"
-                                        Margin="-10,0,0,0">
+                        <!--  -Products Collection View  -->
+                        <CollectionView
+                            Margin="-10,0,0,0"
+                            ItemsSource="{Binding Products}"
+                            SelectionMode="None"
+                            VerticalOptions="StartAndExpand">
                             <CollectionView.ItemsLayout>
                                 <GridItemsLayout Orientation="Horizontal" />
                             </CollectionView.ItemsLayout>
                             <CollectionView.ItemTemplate>
                                 <DataTemplate>
                                     <VerticalStackLayout>
-                                        <Border Padding="0"
-                                    Margin="15,10,5,5"
-                                    WidthRequest="240"
-                                    BackgroundColor="{StaticResource Tertiary}"
-                                    Stroke="Gray"
-                                    StrokeThickness="0"
-                                    StrokeShape="RoundRectangle 15">
+                                        <Border
+                                            Margin="15,10,5,5"
+                                            Padding="0"
+                                            BackgroundColor="{StaticResource Tertiary}"
+                                            Stroke="Gray"
+                                            StrokeShape="RoundRectangle 15"
+                                            StrokeThickness="0"
+                                            WidthRequest="240">
                                             <Border.Shadow>
-                                                
+
                                                 <OnPlatform x:TypeArguments="Shadow">
                                                     <On Platform="Android, WinUI">
-                                                        <Shadow Radius="25" Opacity="0.2"></Shadow>
+                                                        <Shadow Opacity="0.2" Radius="25" />
                                                     </On>
                                                     <On Platform="iOS,MacCatalyst">
-                                                        <Shadow Radius="5" Opacity="0.2"></Shadow>
+                                                        <Shadow Opacity="0.2" Radius="5" />
                                                     </On>
                                                 </OnPlatform>
                                             </Border.Shadow>
                                             <Grid RowDefinitions="Auto,Auto,Auto">
-                                                <Border Grid.Row="0" StrokeThickness="0"
-                                            BackgroundColor="{Binding ProductImgBackground}"
-                                            Padding="0,40"
-                                            Margin="-1">
+                                                <Border
+                                                    Grid.Row="0"
+                                                    Margin="-1"
+                                                    Padding="0,40"
+                                                    BackgroundColor="{Binding ProductImgBackground}"
+                                                    StrokeThickness="0">
                                                     <Border.StrokeShape>
-                                                        <RoundRectangle CornerRadius="15"/>
+                                                        <RoundRectangle CornerRadius="15" />
                                                     </Border.StrokeShape>
-                                                    <Image Source="{Binding ProductImgUrl}"
-                                               Aspect="AspectFit"
-                                               HeightRequest="180"/>
+                                                    <Image
+                                                        Aspect="AspectFit"
+                                                        HeightRequest="180"
+                                                        Source="{Binding ProductImgUrl}" />
                                                 </Border>
-                                                <Label Grid.Row="1" 
-                                           HorizontalOptions="FillAndExpand"
-                                           Text="{Binding ProductName}"
-                                           FontFamily="RalewayMedium"
-                                           FontSize="19"
-                                           TextColor="Black"
-                                           LineBreakMode="NoWrap"
-                                           Margin="10,10,10,10"/>
-                                                <StackLayout Grid.Row="2" Orientation="Horizontal"
-                                                 Margin="10,0,10,15">
-                                                    <Label Text="{Binding ProductPrice, StringFormat='${0}.00'}"
-                                               FontSize="25"
-                                               FontFamily="PoppinsRegular"
-                                               TextColor="{StaticResource Primary}"
-                                               HorizontalOptions="StartAndExpand"/>
-                                                    <ImageButton HorizontalOptions="End"
-                                                     Source="love_filled.png" 
-                                                     Padding="5"
-                                                     Command="{Binding ProductFavCommand}" CommandParameter="{Binding .}">
+                                                <Label
+                                                    Grid.Row="1"
+                                                    Margin="10,10,10,10"
+                                                    FontFamily="RalewayMedium"
+                                                    FontSize="19"
+                                                    HorizontalOptions="FillAndExpand"
+                                                    LineBreakMode="NoWrap"
+                                                    Text="{Binding ProductName}"
+                                                    TextColor="Black" />
+                                                <StackLayout
+                                                    Grid.Row="2"
+                                                    Margin="10,0,10,15"
+                                                    Orientation="Horizontal">
+                                                    <Label
+                                                        FontFamily="PoppinsRegular"
+                                                        FontSize="25"
+                                                        HorizontalOptions="StartAndExpand"
+                                                        Text="{Binding ProductPrice, StringFormat='${0}.00'}"
+                                                        TextColor="{StaticResource Primary}" />
+                                                    <ImageButton
+                                                        Padding="5"
+                                                        Command="{Binding ProductFavCommand}"
+                                                        CommandParameter="{Binding .}"
+                                                        HorizontalOptions="End"
+                                                        Source="love_filled.png">
                                                         <ImageButton.Triggers>
-                                                            <DataTrigger TargetType="ImageButton" 
-                                                             Binding="{Binding ProductIsFav}" Value="True">
-                                                                <Setter Property="Source" Value="love_filled.png"/>
+                                                            <DataTrigger
+                                                                Binding="{Binding ProductIsFav}"
+                                                                TargetType="ImageButton"
+                                                                Value="True">
+                                                                <Setter Property="Source" Value="love_filled.png" />
                                                             </DataTrigger>
-                                                            <DataTrigger TargetType="ImageButton" 
-                                                             Binding="{Binding ProductIsFav}" Value="False">
-                                                                <Setter Property="Source" Value="love_default.png"/>
+                                                            <DataTrigger
+                                                                Binding="{Binding ProductIsFav}"
+                                                                TargetType="ImageButton"
+                                                                Value="False">
+                                                                <Setter Property="Source" Value="love_default.png" />
                                                             </DataTrigger>
                                                         </ImageButton.Triggers>
                                                     </ImageButton>
                                                 </StackLayout>
                                             </Grid>
                                             <Border.GestureRecognizers>
-                                                <TapGestureRecognizer Command="{Binding BindingContext.DetailCommand, Source={x:Reference HomeView}}" CommandParameter="{Binding .}"/>
+                                                <TapGestureRecognizer Command="{Binding BindingContext.DetailCommand, Source={x:Reference HomeView}}" CommandParameter="{Binding .}" />
                                             </Border.GestureRecognizers>
                                         </Border>
 

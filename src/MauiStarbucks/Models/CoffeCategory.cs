@@ -1,4 +1,4 @@
-﻿namespace MauiStarbucks.Models
+﻿namespace CassavaRoots.Models
 {
     public enum CoffeCategory
     {

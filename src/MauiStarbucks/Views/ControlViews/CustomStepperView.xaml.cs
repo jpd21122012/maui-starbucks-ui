@@ -1,4 +1,4 @@
-namespace MauiStarbucks.Views.ControlViews;
+namespace CassavaRoots.Views.ControlViews;
 
 public partial class CustomStepperView : Microsoft.Maui.Controls.ContentView
 {

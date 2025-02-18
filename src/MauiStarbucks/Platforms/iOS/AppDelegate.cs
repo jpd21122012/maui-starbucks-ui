@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace MauiStarbucks;
+namespace CassavaRoots;
 
 [Register("AppDelegate")]
 public class AppDelegate : MauiUIApplicationDelegate
