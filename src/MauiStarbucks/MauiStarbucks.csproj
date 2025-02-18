@@ -27,37 +27,37 @@
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-android|AnyCPU'">
-	  <EnableLLVM>True</EnableLLVM>
-	  <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
+		<EnableLLVM>True</EnableLLVM>
+		<AndroidEnableMultiDex>False</AndroidEnableMultiDex>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-android|AnyCPU'">
-	  <EnableLLVM>True</EnableLLVM>
-	  <RunAOTCompilation>False</RunAOTCompilation>
-	  <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
-	  <AndroidLinkTool>r8</AndroidLinkTool>
-	  <TrimMode>link</TrimMode>
+		<EnableLLVM>True</EnableLLVM>
+		<RunAOTCompilation>False</RunAOTCompilation>
+		<AndroidEnableMultiDex>False</AndroidEnableMultiDex>
+		<AndroidLinkTool>r8</AndroidLinkTool>
+		<TrimMode>link</TrimMode>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-ios|AnyCPU'">
-	  <EnableLLVM>True</EnableLLVM>
+		<EnableLLVM>True</EnableLLVM>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-ios|AnyCPU'">
-	  <EnableLLVM>True</EnableLLVM>
-	  <AndroidLinkTool>r8</AndroidLinkTool>
-	  <TrimMode>link</TrimMode>
+		<EnableLLVM>True</EnableLLVM>
+		<AndroidLinkTool>r8</AndroidLinkTool>
+		<TrimMode>link</TrimMode>
 	</PropertyGroup>
 
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net8.0-windows10.0.19041.0|AnyCPU'">
-	  <EnableLLVM>True</EnableLLVM>
+		<EnableLLVM>True</EnableLLVM>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-windows10.0.19041.0|AnyCPU'">
-	  <EnableLLVM>True</EnableLLVM>
-	  <AndroidLinkTool>r8</AndroidLinkTool>
-	  <TrimMode>link</TrimMode>
+		<EnableLLVM>True</EnableLLVM>
+		<AndroidLinkTool>r8</AndroidLinkTool>
+		<TrimMode>link</TrimMode>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -76,60 +76,61 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\Fonts\Poppins-Regular.ttf" />
-	  <None Remove="Resources\Fonts\ProximaNova-Regular.otf" />
-	  <None Remove="Resources\Fonts\Raleway-Medium.ttf" />
-	  <None Remove="Resources\Fonts\Raleway-Regular.ttf" />
-	  <None Remove="Resources\Images\add.png" />
-	  <None Remove="Resources\Images\back_arrow.png" />
-	  <None Remove="Resources\Images\chocolate_frappuccino.png" />
-	  <None Remove="Resources\Images\fav.png" />
-	  <None Remove="Resources\Images\filter.png" />
-	  <None Remove="Resources\Images\grande.png" />
-	  <None Remove="Resources\Images\home.png" />
-	  <None Remove="Resources\Images\humberger.svg" />
-	  <None Remove="Resources\Images\humberger_menu.png" />
-	  <None Remove="Resources\Images\love_default.png" />
-	  <None Remove="Resources\Images\love_filled.png" />
-	  <None Remove="Resources\Images\notification.png" />
-	  <None Remove="Resources\Images\search.png" />
-	  <None Remove="Resources\Images\shadow_1.png" />
-	  <None Remove="Resources\Images\shop_bag.png" />
-	  <None Remove="Resources\Images\star.png" />
-	  <None Remove="Resources\Images\substract.png" />
-	  <None Remove="Resources\Images\tall.png" />
-	  <None Remove="Resources\Images\tea_frappuccino.png" />
-	  <None Remove="Resources\Images\venti.png" />
-	  <None Remove="Resources\Images\wallet.png" />
+		<None Remove="Resources\Fonts\Poppins-Regular.ttf" />
+		<None Remove="Resources\Fonts\ProximaNova-Regular.otf" />
+		<None Remove="Resources\Fonts\Raleway-Medium.ttf" />
+		<None Remove="Resources\Fonts\Raleway-Regular.ttf" />
+		<None Remove="Resources\Images\add.png" />
+		<None Remove="Resources\Images\back_arrow.png" />
+		<None Remove="Resources\Images\chocolate_frappuccino.png" />
+		<None Remove="Resources\Images\fav.png" />
+		<None Remove="Resources\Images\filter.png" />
+		<None Remove="Resources\Images\grande.png" />
+		<None Remove="Resources\Images\home.png" />
+		<None Remove="Resources\Images\humberger.svg" />
+		<None Remove="Resources\Images\humberger_menu.png" />
+		<None Remove="Resources\Images\love_default.png" />
+		<None Remove="Resources\Images\love_filled.png" />
+		<None Remove="Resources\Images\notification.png" />
+		<None Remove="Resources\Images\search.png" />
+		<None Remove="Resources\Images\shadow_1.png" />
+		<None Remove="Resources\Images\shop_bag.png" />
+		<None Remove="Resources\Images\star.png" />
+		<None Remove="Resources\Images\substract.png" />
+		<None Remove="Resources\Images\tall.png" />
+		<None Remove="Resources\Images\tea_frappuccino.png" />
+		<None Remove="Resources\Images\venti.png" />
+		<None Remove="Resources\Images\wallet.png" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="CommunityToolkit.Maui" Version="1.2.0" />
-	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
-	  <PackageReference Include="Splat" Version="14.4.1" />
+		<PackageReference Include="Splat" Version="14.4.1" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="9.0.3" />
+		<PackageReference Include="CommunityToolkit.Maui.Markup" Version="4.1.0" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Views\ControlViews\CustomStepperView.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\Pages\CustomTabBar.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\Pages\DetailPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\Pages\FavouritePage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\Pages\HomePage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\Pages\NotificationPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Views\Pages\WalletPage.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
+		<MauiXaml Update="Views\ControlViews\CustomStepperView.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Views\Pages\CustomTabBar.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Views\Pages\DetailPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Views\Pages\FavouritePage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Views\Pages\HomePage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Views\Pages\NotificationPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+		<MauiXaml Update="Views\Pages\WalletPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
 	</ItemGroup>
 </Project>

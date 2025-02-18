@@ -3,11 +3,134 @@
     x:Class="CassavaRoots.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:effects="clr-namespace:CassavaRoots.Effects"
     xmlns:local="clr-namespace:CassavaRoots"
+    xmlns:mct="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:page="clr-namespace:CassavaRoots.Views.Pages"
-    Shell.FlyoutBehavior="Disabled">
+    FlyoutBackdrop="#DD1F1E24"
+    FlyoutBackgroundColor="White"
+    FlyoutHeaderBehavior="CollapseOnScroll"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.FlyoutWidth="{OnPlatform iOS=290,
+                                   Android=270}"
+    Shell.NavBarIsVisible="False"
+    Shell.TabBarBackgroundColor="White"
+    Shell.TabBarDisabledColor="Transparent"
+    Shell.TabBarIsVisible="False"
+    Shell.TabBarTitleColor="#00ff00"
+    Shell.TabBarUnselectedColor="#707070">
+    <Shell.Behaviors>
+        <mct:StatusBarBehavior StatusBarColor="White" StatusBarStyle="DarkContent" />
+    </Shell.Behaviors>
 
-    <TabBar Route="starbucks">
+
+    <!--  Styles  -->
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <Grid Padding="30,0" HeightRequest="50">
+                <Image
+                    Grid.Row="1"
+                    Aspect="AspectFit"
+                    BackgroundColor="Transparent"
+                    Source="{Binding Icon}" />
+            </Grid>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+    <!--  Styles  -->
+
+    <!--  Header  -->
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <Grid HeightRequest="200" RowDefinitions="50*, 50*">
+                <Image
+                    Grid.Row="0"
+                    Margin="25,0,0,0"
+                    effects:TouchEffect.NativeAnimation="True"
+                    effects:TouchEffect.NativeAnimationColor="#1651EB"
+                    Aspect="AspectFit"
+                    HeightRequest="24"
+                    HorizontalOptions="Start"
+                    Source="icon_close_blue"
+                    TranslationY="12">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding CloseFlyoutCommand}" NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Grid Grid.Row="1" ColumnDefinitions="30*, 70*">
+                    <Image
+                        Grid.Column="0"
+                        Margin="18,0,0,0"
+                        Aspect="AspectFit"
+                        HeightRequest="60"
+                        Source="icon_nutrissa_foto"
+                        WidthRequest="60" />
+                    <Label
+                        Grid.Column="1"
+                        Margin="10,0,0,0"
+                        FontAutoScalingEnabled="False"
+                        FontFamily="InterBlack"
+                        FontSize="16"
+                        HorizontalTextAlignment="Start"
+                        IsVisible="{Binding HideName, Mode=TwoWay}"
+                        Text="{Binding Name, Mode=TwoWay}"
+                        TextColor="{StaticResource Primary}"
+                        VerticalTextAlignment="Center" />
+                </Grid>
+            </Grid>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+    <!--  Header  -->
+
+    <!--  Footer  -->
+    <Shell.FlyoutFooterTemplate>
+        <DataTemplate>
+            <VerticalStackLayout HeightRequest="120">
+                <Grid
+                    Margin="25,0,0,0"
+                    Padding="20"
+                    effects:TouchEffect.Command="{Binding CloseSession}"
+                    effects:TouchEffect.NativeAnimation="True"
+                    ColumnDefinitions="12*, 20*,56*, 12*"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center">
+                    <Image
+                        Grid.Column="1"
+                        Aspect="AspectFit"
+                        HeightRequest="20"
+                        Source="felcha_logout"
+                        WidthRequest="25" />
+                    <Label
+                        Grid.Column="2"
+                        Margin="10,0,0,0"
+                        FontAutoScalingEnabled="False"
+                        FontFamily="InterRegular"
+                        FontSize="15"
+                        HorizontalOptions="Start"
+                        HorizontalTextAlignment="Start"
+                        Text="{Binding LogoutText, Mode=TwoWay}"
+                        TextColor="#707070"
+                        VerticalOptions="Center"
+                        VerticalTextAlignment="Center"
+                        WidthRequest="175" />
+                </Grid>
+                <Label
+                    Margin="0,0,20,0"
+                    FontAttributes="Bold"
+                    FontAutoScalingEnabled="False"
+                    FontSize="14"
+                    HeightRequest="30"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center"
+                    Text="{Binding AppVersion, Mode=TwoWay}"
+                    TextColor="#B8B8B8" />
+            </VerticalStackLayout>
+        </DataTemplate>
+    </Shell.FlyoutFooterTemplate>
+    <!--  Footer  -->
+
+
+    <!--  TabBars  -->
+    <TabBar>
         <Tab Icon="home.png" Route="home">
             <ShellContent ContentTemplate="{DataTemplate page:HomePage}" />
         </Tab>
@@ -21,5 +144,103 @@
             <ShellContent ContentTemplate="{DataTemplate page:NotificationPage}" />
         </Tab>
     </TabBar>
+    <!--  TabBars  -->
+
+
+    <!--  FlyoutContent  -->
+    <FlyoutItem
+        Title="Home"
+        FlyoutDisplayOptions="AsMultipleItems"
+        Icon="home_icon">
+        <Tab
+            Title="Home"
+            FlyoutItemIsVisible="False"
+            Icon="home_icon">
+            <ShellContent
+                x:Name="HomeTab"
+                ContentTemplate="{DataTemplate page:HomePage}"
+                IsVisible="True"
+                Route="HomePage"
+                Shell.TabBarForegroundColor="{StaticResource Primary}"
+                Shell.TabBarIsVisible="True"
+                Shell.UnselectedColor="{StaticResource CoffeeBg1}" />
+        </Tab>
+        <Tab
+            Title="Promociones"
+            FlyoutItemIsVisible="False"
+            Icon="promo_tab_icon">
+            <ShellContent
+                ContentTemplate="{DataTemplate page:HomePage}"
+                IsVisible="True"
+                Route="PromotionPage"
+                Shell.TabBarForegroundColor="{StaticResource Primary}"
+                Shell.TabBarIsVisible="True"
+                Shell.TabBarTitleColor="{StaticResource CoffeeBg1}" />
+        </Tab>
+
+        <Tab
+            Title="Mis Puntos"
+            FlyoutItemIsVisible="False"
+            Icon="nutrissa_tab_icon">
+            <ShellContent
+                ContentTemplate="{DataTemplate page:HomePage}"
+                IsVisible="{Binding MyPointsIsVIsible, Mode=OneWay}"
+                Route="MyPointsPage"
+                Shell.TabBarForegroundColor="#1651E3"
+                Shell.TabBarIsVisible="True"
+                Shell.TabBarTitleColor="#1651E3" />
+        </Tab>
+        <Tab
+            Title="Tiendas"
+            FlyoutItemIsVisible="False"
+            Icon="find_tab_icon">
+            <ShellContent
+                ContentTemplate="{DataTemplate page:HomePage}"
+                IsVisible="True"
+                Route="StoresPage"
+                Shell.TabBarForegroundColor="#7F3D98"
+                Shell.TabBarIsVisible="True"
+                Shell.TabBarTitleColor="#7F3D98" />
+        </Tab>
+    </FlyoutItem>
+
+    <!--  FlyoutContent  -->
+
+
+    <!--  MenuItems  -->
+
+    <MenuItem
+        x:Name="promoItem"
+        Command="{Binding GoPromos, Mode=TwoWay}"
+        IconImageSource="menu_promo"
+        Text="Promo" />
+    <MenuItem
+        x:Name="puntosItem"
+        ClassId="pointss"
+        Command="{Binding GoMyPoints, Mode=TwoWay}"
+        IconImageSource="menu_puntos"
+        Text="Puntos" />
+    <MenuItem
+        x:Name="compraItem"
+        Command="{Binding GoShop, Mode=TwoWay}"
+        IconImageSource="menu_compras"
+        Text="compra" />
+    <MenuItem
+        x:Name="findItem"
+        Command="{Binding GoStores, Mode=TwoWay}"
+        IconImageSource="menu_find"
+        Text="find" />
+    <MenuItem
+        x:Name="historyItem"
+        Command="{Binding GoHistory, Mode=TwoWay}"
+        IconImageSource="menu_historial"
+        Text="historial" />
+    <MenuItem
+        x:Name="profileItem"
+        Command="{Binding GoProfile, Mode=TwoWay}"
+        IconImageSource="menu_profile"
+        Text="profile" />
+
+    <!--  MenuItems  -->
 
 </Shell>

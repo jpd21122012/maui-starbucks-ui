@@ -105,9 +105,9 @@ public partial class CustomTabBar : BasePage
 #if ANDROID
         viewRowHeight.Height = AppLocator.DisplayHeight;
 #endif
-        HomeCommand = new Command(() => Shell.Current.GoToAsync("///starbucks/home"));
-        WalletCommand = new Command(() => Shell.Current.GoToAsync("///starbucks/wallet"));
-        FavCommand = new Command(() => Shell.Current.GoToAsync("///starbucks/fav"));
-        NotificationCommand = new Command(() => Shell.Current.GoToAsync("///starbucks/notification"));
+        HomeCommand = new Command(() => Shell.Current.GoToAsync("///home"));
+        WalletCommand = new Command(() => Shell.Current.GoToAsync("///wallet"));
+        FavCommand = new Command(() => Shell.Current.GoToAsync("///fav"));
+        NotificationCommand = new Command(() => Shell.Current.GoToAsync("///notification"));
     }
 }

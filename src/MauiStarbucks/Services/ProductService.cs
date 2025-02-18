@@ -18,9 +18,9 @@
                 new Product()
                 {
                     ProductId=1010, 
-                    ProductType="Coffee",
-                    ProductName="Chocolate Frappuccino", 
-                    ProductImgUrl="chocolate_frappuccino.png",
+                    ProductType="Drink",
+                    ProductName="Cassava Coco", 
+                    ProductImgUrl="acapulcoco",
                     ProductImgBackground=Color.FromHex("#F3F1ED"),
                     ProductIsFav=true,
                     ProductPrice=20.00,
@@ -31,9 +31,9 @@
                 new Product()
                 {
                     ProductId=1011,
-                    ProductType="Tea",
-                    ProductName="Tea Frappuccino",
-                    ProductImgUrl="tea_frappuccino.png",
+                    ProductType="Bubba Tea",
+                    ProductName="Magic Butterfly",
+                    ProductImgUrl="magicbutterfly",
                     ProductImgBackground= Color.FromHex("#F5F9E0"),
                     ProductIsFav=false,
                     ProductPrice=30.00,

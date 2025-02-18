@@ -13,6 +13,7 @@
     Background="{StaticResource TertiaryBrush}"
     BindingContext="{x:Static local:AppLocator.HomeViewModel}"
     SelectedTabIndex="0"
+    Shell.NavBarIsVisible="False"
     Shell.PresentationMode="Animated"
     mc:Ignorable="d">
     <page:CustomTabBar.ViewContent>
@@ -33,6 +34,9 @@
                     Grid.Column="0"
                     HorizontalOptions="Start"
                     Style="{StaticResource EllipseBorderStyle}">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding FlyoutCommand, Mode=TwoWay}" />
+                    </Border.GestureRecognizers>
                     <Image
                         HorizontalOptions="Center"
                         Source="humberger_menu.png"

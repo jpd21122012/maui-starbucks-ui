@@ -1,0 +1,17 @@
+﻿namespace CassavaRoots.Platforms.Android
+{
+    internal static class JavaObjectExtentions
+    {
+        public static bool IsDisposed(this Java.Lang.Object obj)
+    => obj.Handle == IntPtr.Zero;
+
+        public static bool IsAlive(this Java.Lang.Object obj)
+            => obj != null && !obj.IsDisposed();
+
+        public static bool IsDisposed(this global::Android.Runtime.IJavaObject obj)
+            => obj.Handle == IntPtr.Zero;
+
+        public static bool IsAlive(this global::Android.Runtime.IJavaObject obj)
+            => obj != null && !obj.IsDisposed();
+    }
+}

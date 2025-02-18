@@ -13,6 +13,9 @@ namespace CassavaRoots.ViewModels
         [ObservableProperty]
         public string _categorySelectedValue;
 
+
+        public ICommand FlyoutCommand { get; set; }
+
         partial void OnCategorySelectedValueChanged(string value)
         {
             Debug.WriteLine(value);
@@ -20,7 +23,14 @@ namespace CassavaRoots.ViewModels
         public HomeViewModel()
         {
             DetailCommand = new Command(OnDetailCommand);
+            FlyoutCommand = new Command(OnFlyoutCommand);
         }
+
+        private async void OnFlyoutCommand(object obj)
+        {
+            Shell.Current.FlyoutIsPresented = !Shell.Current.FlyoutIsPresented;
+        }
+
         public ICommand DetailCommand { get; }
         private async void OnDetailCommand(object obj)
         {

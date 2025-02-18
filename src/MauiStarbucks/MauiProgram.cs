@@ -1,4 +1,7 @@
-﻿namespace CassavaRoots;
+﻿using CassavaRoots.Hosting;
+using CommunityToolkit.Maui.Markup;
+
+namespace CassavaRoots;
 
 public static class MauiProgram
 {
@@ -8,12 +11,15 @@ public static class MauiProgram
         builder
             .UseMauiApp<App>()
             .UseMauiCommunityToolkit()
+            .UseMauiTouchEffect()
+             .UseMauiCommunityToolkitMarkup()
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("Poppins-Regular.ttf", "PoppinsRegular");
                 fonts.AddFont("ProximaNova-Regular.otf", "ProximaNovaRegular");
                 fonts.AddFont("Raleway-Regular.ttf", "RalewayRegular");
                 fonts.AddFont("Raleway-Medium.ttf", "RalewayMedium");
+                fonts.AddFont("Carol-Gothic.ttf", "Carol");
             });
         HandleEntryHandler();
         return builder.Build();
